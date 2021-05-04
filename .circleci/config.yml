@@ -84,16 +84,16 @@ jobs:
 
   deploy:
     docker:
-    - image: buildpack-deps:trusty
+    - image: sue445/heroku-cli
     steps:
     - checkout
 
     - run:
-      name: Deploy Master to Heroku
-      command: |
-        if [ "${CIRCLE_BRANCH}" == "master" ]; then
-          git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
-        fi
+        name: Deploy Master to Heroku
+        command: |
+          if [ "${CIRCLE_BRANCH}" == "master" ]; then
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+          fi
 
   workflows:
   version: 2.1

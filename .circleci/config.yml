@@ -91,6 +91,11 @@ jobs:
         destination: test-results
 
   deploy:
+    executor: heroku/default # 標準の buildpack-deps イメージを使用します。このイメージは、Heroku の CLI をインストールする際に前提条件を提示します。
+    steps:
+      - checkout
+
+    - run
       name: Deploy Master to Heroku
       command: |
         if [ "${CIRCLE_BRANCH}" == "master" ]; then

@@ -8,8 +8,8 @@ jobs:
         - RAILS_ENV: 'test'
     - image: circleci/mysql:5.7
       environment:
-        - MYSQL_ROOT_HOST: '%'
         - MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+        - MYSQL_ROOT_HOST: '127.0.0.1'
 
     working_directory: ~/rails_farmland
 
@@ -44,8 +44,8 @@ jobs:
         - RAILS_ENV: 'test'
     - image: circleci/mysql:5.7
       environment:
-        - MYSQL_ROOT_HOST: '%'
         - MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+        - MYSQL_ROOT_HOST: '127.0.0.1'
 
     working_directory: ~/rails_farmland
 

@@ -11,7 +11,7 @@ jobs:
         - MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
         - MYSQL_ROOT_HOST: '127.0.0.1'
 
-    working_directory: ~/rails_farmland  #自身のアプリディレクトリ名を設定  
+    working_directory: ~/rails_farmland
 
 
     steps:
@@ -35,17 +35,14 @@ jobs:
     - run:
         name: Run rubocop
         command: bundle exec rubocop
-    # Database setup
     - run: mv ./config/database.yml.ci ./config/database.yml
 
-    # Database setup
     - run:
         name: Databasesetup
         command: |
           bundle exec rake db:create
           bundle exec rake db:schema:load
 
-    # run tests!
     - run:
         name: Run rspec
         command: |
@@ -60,7 +57,6 @@ jobs:
             --format progress \
             $TEST_FILES
 
-    # collect reports
     - store_test_results:
         path: /tmp/test-results
     - store_artifacts:

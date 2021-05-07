@@ -1,0 +1,126 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.posts_container{
+  width: 80%;
+  margin: 0 auto;
+}
+.sprout {
+  width: 100%;
+  text-align: center;
+  background: white;
+  position: relative;
+  padding: 10px 0 10px;
+  margin-bottom: 40px;
+  margin-top: 70px;
+}
+.posts_front{
+  font-size: 220%;
+  line-height: 150%;
+  color: #ed6f2e;
+  background: -webkit-linear-gradient(to right, #ff4200 40%, #edac2e 60%);
+  background-clip: text;
+  text-align: center;
+}
+.myfarmer_area__box {
+  padding: 60px 0;
+  border-bottom: solid 1px #ccc;
+  border-radius: 15px;
+  padding: 45px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.posts_photo {
+  width: 27%;
+}
+.posts_photo img {
+  width: 100%;
+}
+.green-btn {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.green-btn a {
+  display: block;
+  background: rgb(104,183,135);
+  background-size: 16px 16px;
+  padding: 24px 20px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 120%;
+  text-decoration: none;
+  box-shadow: 0 5px 0 #023a21;
+  border-radius: 6px;
+  transition: .4s;
+}
+.posts_description {
+  width: 71%;
+  margin-left: auto;
+}
+.posts_description_title {
+  font-size: 180%;
+  padding-bottom: 8px;
+  padding-left: 10px;
+}
+.posts_description_address {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: solid 2px #efefef;
+  padding: 10px 8px;
+}
+.posts_description_address dt {
+  width: 15%;
+  font-weight: bold;
+  color: black;
+}
+.posts_description_address dd {
+  width: 84%;
+  margin-left: auto;
+  font-size: 2.7vh;
+  color: black;
+  font-weight: bold;
+}
+.posts_description_list {
+  display: flex;
+  border-bottom: solid 2px #efefef;
+  padding: 10px 8px;
+  text-align: center;
+}
+.posts_description_list li {
+  width: 50%;
+  list-style: none;
+  border-right: solid 2px #eee;
+}
+.posts_description_fee dt {
+  text-align: left;
+  font-weight: bold;
+  color: black;
+}
+.posts_description_fee dd {
+  font-size: 2.7vh;
+  font-weight: bold;
+  color: black;
+}
+.posts_description_menseki dt{
+  padding-left: 30px;
+  text-align: left;
+  font-weight: bold;
+  color: black;
+}
+.posts_description_menseki dd{
+  font-size: 2.7vh;
+  font-weight: bold;
+  color: black;
+}

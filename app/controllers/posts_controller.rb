@@ -12,12 +12,12 @@ class PostsController < ApplicationController
       p_menseki: params[:p_menseki],
       p_price: params[:p_price],
       p_introduction: params[:p_introduction],
-      p_image: params[:p_image]
+      p_image: params[:p_image])
     if @post.save
       flash[:notice] = "あなたの農園を登録しました！"
-      redirect_to("/")
+      redirect_to("posts/index")
     else
-      render action: "new"
+      redirect_to("/posts")
     end
   end
 end

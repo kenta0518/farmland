@@ -2,91 +2,35 @@
   <div class="sprout">
     <h2 class="posts_front"><i class="fas fa-carrot"></i>農場一覧</h2>
   </div>
-  <section class="myfarmer_area__box">
-    <div class="posts_photo">
-      <p><a href="/farms/34"><img alt="大東農園" src="https://myfarmer.jp/wp-content/uploads/2018/01/ID34_01-1.jpg"></a></p>
-      <p class="green-btn"><a href="/farms/34" class="btn-sticky"><span>詳細</span></a></p>
-    </div>
-    <div class="posts_description">
-      <div class="posts_description_title">
-        <h4><a href="/farms/34">大東農園</a></h4>
+  <% @posts.each do |post| %>
+    <section class="myfarmer_area__box">
+      <div class="posts_photo">
+        <p><a href="/farms/34"><%= image_tag post.p_image.url,class: "img-room"%></a></p>
+        <p class="green-btn"><a href="/farms/34" class="btn-sticky"><span>詳細</span></a></p>
       </div>
-      <dl class="posts_description_address">
-        <dt>場所</dt>
-        <dd>大阪府大東市中垣内7丁目2-23</dd>
-      </dl>
-      <ul class="posts_description_list">
-        <li>
-          <dl class="posts_description_fee">
-            <dt>月額利用料</dt>
-            <dd>3300円</dd>
-          </dl>
-        </li>
-        <li>
-          <dl class="posts_description_menseki">
-            <dt>区画面積</dt>
-            <dd>15㎡</dd>
-          </dl>
-        </li>
-      </ul>
-    </div>
-  </section>
-  <section class="myfarmer_area__box">
-    <div class="posts_photo">
-      <p><a href="/farms/34"><img alt="大東農園" src="https://myfarmer.jp/wp-content/uploads/2018/01/ID34_01-1.jpg"></a></p>
-      <p class="green-btn"><a href="/farms/34" class="btn-sticky"><span>詳細</span></a></p>
-    </div>
-    <div class="posts_description">
-      <div class="posts_description_title">
-        <h4><a href="/farms/34">大東農園</a></h4>
+      <div class="posts_description">
+        <div class="posts_description_title">
+          <h4><a href="/farms/34"><%= post.p_name %></a></h4>
+        </div>
+        <dl class="posts_description_address">
+          <dt>場所</dt>
+          <dd><%= post.p_adress %></dd>
+        </dl>
+        <ul class="posts_description_list">
+          <li>
+            <dl class="posts_description_fee">
+              <dt>月額利用料</dt>
+              <dd><%= post.p_price %>円</dd>
+            </dl>
+          </li>
+          <li>
+            <dl class="posts_description_menseki">
+              <dt>区画面積</dt>
+              <dd><%= post.p_menseki %>㎡</dd>
+            </dl>
+          </li>
+        </ul>
       </div>
-      <dl class="posts_description_address">
-        <dt>場所</dt>
-        <dd>大阪府大東市中垣内7丁目2-23</dd>
-      </dl>
-      <ul class="posts_description_list">
-        <li>
-          <dl class="posts_description_fee">
-            <dt>月額利用料</dt>
-            <dd>3300円</dd>
-          </dl>
-        </li>
-        <li>
-          <dl class="posts_description_menseki">
-            <dt>区画面積</dt>
-            <dd>15㎡</dd>
-          </dl>
-        </li>
-      </ul>
-    </div>
-  </section>
-  <section class="myfarmer_area__box">
-    <div class="posts_photo">
-      <p><a href="/farms/34"><img alt="大東農園" src="https://myfarmer.jp/wp-content/uploads/2018/01/ID34_01-1.jpg"></a></p>
-      <p class="green-btn"><a href="/farms/34" class="btn-sticky"><span>詳細</span></a></p>
-    </div>
-    <div class="posts_description">
-      <div class="posts_description_title">
-        <h4><a href="/farms/34">大東農園</a></h4>
-      </div>
-      <dl class="posts_description_address">
-        <dt>場所</dt>
-        <dd>大阪府大東市中垣内7丁目2-23</dd>
-      </dl>
-      <ul class="posts_description_list">
-        <li>
-          <dl class="posts_description_fee">
-            <dt>月額利用料</dt>
-            <dd>3300円</dd>
-          </dl>
-        </li>
-        <li>
-          <dl class="posts_description_menseki">
-            <dt>区画面積</dt>
-            <dd>15㎡</dd>
-          </dl>
-        </li>
-      </ul>
-    </div>
-  </section>
+    </section>
+  <% end %>
 </div>

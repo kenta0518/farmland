@@ -1,0 +1,64 @@
+<div class="posts_container">
+  <div class="sprout">
+    <h2 class="posts_front"><i class="fas fa-carrot"></i>貸し農園登録フォーム</h2>
+  </div>
+  <%= form_with model:@posts do |f| %>
+    <div class="myfarmer_area__box_new">
+      <div class="form_inner">
+        <div class="contents-wrapper">
+          <div class="contents-row">
+            <label class="span-contents"><i class="fas fa-seedling"></i>   農園の名前</label>
+            <div class="form_contents">
+              <%= f.text_field :p_name %>
+            </div>
+          </div>
+        </div>
+        <div class="contents-wrapper">
+          <div class="contents-row">
+            <label class="span-contents"><i class="fas fa-map-marker-alt"></i>  住所 </label>
+            <div class="form_contents">
+              <%= f.text_area :p_adress %>
+            </div>
+          </div>
+        </div>
+        <div class="contents-wrapper">
+          <div class="contents-row">
+            <label class="span-contents"><i class="fas fa-ruler-combined"></i>  面積 /㎡</label>
+            <div class="form_contents">
+              <%= f.number_field :p_menseki %>
+            </div>
+          </div>
+        </div>
+        <div class="contents-wrapper">
+          <div class="contents-row">
+            <label class="span-contents"><i class="fas fa-yen-sign"></i> 月額利用料 </label>
+            <div class="form_contents">
+              <%= f.number_field :p_price %>
+            </div>
+          </div>
+        </div>
+        <div class="contents-wrapper">
+          <div class="contents-row">
+            <label class="span-contents"><i class="fas fa-oil-can"></i>  農園の紹介 </label>
+            <div class="form_contents">
+              <%= f.text_area :p_introduction %>
+            </div>
+          </div>
+        </div>
+        <div class="contents-wrapper">
+          <div class="contents-row">
+            <label class="span-contents"><i class="fas fa-camera"></i>  画像 </label>
+            <div class="icon-contents">
+              <%= f.file_field :p_image %>
+            </div>
+          </div>
+        </div>
+        <div class="contents-wrapper">
+          <p class="top-contents">
+            <%= f.submit "登録",class:"form_btn"  %>
+          </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -5,12 +5,14 @@
   <% @posts.each do |post| %>
     <section class="myfarmer_area__box">
       <div class="posts_photo">
-        <p><a href="/farms/34"><%= image_tag post.p_image.url,class: "img-room"%></a></p>
-        <p class="green-btn"><a href="/farms/34" class="btn-sticky"><span>詳細</span></a></p>
+        <%= link_to("/posts/#{post.id}",class:"no-underline") do %>
+          <p><%= image_tag post.p_image.url,class: "img-room"%></p>
+          <p class="green-btn"><span>詳細</span></p>
+        <% end %>
       </div>
       <div class="posts_description">
         <div class="posts_description_title">
-          <h4><a href="/farms/34"><%= post.p_name %></a></h4>
+          <h4><%= post.p_name %></h4>
         </div>
         <dl class="posts_description_address">
           <dt>場所</dt>

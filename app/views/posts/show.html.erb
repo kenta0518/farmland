@@ -1,0 +1,41 @@
+<div class="farm_show">
+  <div class="sprout">
+    <h2 class="posts_front"><i class="fas fa-carrot"></i>農場詳細</h2>
+  </div>
+    <div class="farm_show_top">
+        <h3><%= @post.p_name %></h3>
+    </div>
+  <div class="show_contents">
+    <div class="show_image">
+        <%= image_tag @post.p_image.url,class:"show_farm_image" %>
+    </div>
+    <%#= form_with(url: "reservations/#{@post.id}/new" , method: :get) do |f| %>
+      <div class="show_reservations">
+      </div>
+    <%#end%>
+  </div>
+  <div class="farm_show_info">
+    <h4><i class="fab fa-pagelines"></i>  農園紹介</h4>
+    <p><%= @post.p_introduction %></p>
+  </div>
+  <table class="show_table">
+    <tbody>
+      <tr>
+        <th>農園名</th>
+        <td><%= @post.p_name %></td>
+      </tr>
+      <tr>
+        <th>場所</th>
+        <td><%= @post.p_adress %></td>
+      </tr>
+      <tr>
+        <th>月額利用料金</th>
+        <td><%= @post.p_price %>円</td>
+      </tr>
+      <tr>
+        <th>面積</th>
+        <td><%= @post.p_menseki %>㎡</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

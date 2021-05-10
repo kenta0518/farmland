@@ -18,9 +18,13 @@ class PostsController < ApplicationController
     )
     if @post.save
       flash[:notice] = "あなたの農園を登録しました！"
-      redirect_to("posts/index")
+      redirect_to("/posts/index")
     else
       redirect_to("/posts")
     end
+  end
+
+  def show
+    @post = Post.find_by(id: params[:id])
   end
 end

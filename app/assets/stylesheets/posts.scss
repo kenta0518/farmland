@@ -48,8 +48,6 @@
 .green-btn {
   text-align: center;
   margin-bottom: 15px;
-}
-.green-btn a {
   display: block;
   background: rgb(104,183,135);
   background-size: 16px 16px;
@@ -61,6 +59,7 @@
   box-shadow: 0 5px 0 #023a21;
   border-radius: 6px;
   transition: .4s;
+  
 }
 .posts_description {
   width: 71%;
@@ -185,4 +184,88 @@
 .form_btn{
   width: 100px;
   font-size: 2.2vw;
+}
+.farm_show{
+  width: 85%;
+  margin: 0 auto;
+}
+.show_contents{
+  display: flex;
+  box-sizing: border-box;
+}
+.show_image{
+  max-width: 66.666667%;
+  padding-right: 15px;
+}
+.show_farm_image{
+  width: 100%;
+}
+.show_reservations {
+  border-radius: 5px;
+  background: white;
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-left: 15px;
+}
+.farm_show_top {
+  padding: 1em 1.5em;
+  margin: 2em 0;
+  border-left: solid 10px #0b3661;
+  color:#000000;
+}
+.farm_show_top h3{
+  font-size: 2.5vw;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.farm_show_info {
+  padding: 1em 6vw;
+  margin: 2em 0;
+  background-color:#ffffff;
+  border: dotted 6px #0b3661;
+  color:#000000;
+}
+.farm_show_info h4{
+  text-align: center;
+  font-size: 2.7vw;
+  margin-top: 10px;
+  margin-bottom: 3vh;
+}
+.farm_show_info p {
+  margin: 0; 
+  padding: 0;
+  font-size: 2vw;
+  padding-bottom: 5vh;
+}
+.fa-pagelines{
+  color: green;
+}
+.show_table{
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-collapse: collapse;
+  width: 100%;
+}
+th {
+  padding:1.6%;
+}
+.show_table th{
+  background-color: #dfeec1;
+  color:#000000;
+  width:10%;
+  font-size: 1.7vw;
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+.show_table td{
+  width:30%;
+  color:#000000;
+  font-weight: bold;
+  font-size: 1.7vw;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding-left: 3%;
 }

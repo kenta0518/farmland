@@ -1,0 +1,44 @@
+<div class="posts_container">
+  <div class="sprout">
+    <h2 class="posts_front"><i class="fas fa-carrot"></i>新規登録</h2>
+  </div>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+  
+    <div class="form-container">
+      <div class="form-main">
+        <p class="p_b">新しいアカウントを作成</p>
+        <div class="form-inner">
+    <div class="field">
+      <%= f.label :メールアドレス %><br>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :ユーザーネーム %><br>
+      <%= f.text_field :username, class: "form-control" %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :パスワード %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %>文字以上)</em>
+      <% end %><br>
+      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :パスワード再入力 %><br>
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+    </div>
+  
+    <div class="actions">
+      <%= f.submit "アカウントを作成", class: "btn btn-primary btn-block" %><br>
+      <p class="links_btn"><%= render "devise/shared/links" %></p>
+    </div>
+    </div>
+      </div>
+        </div>
+  <% end %>
+</div>

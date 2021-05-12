@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   #resources :posts, only: [:index,:new,:create]
   post "posts/new" =>"posts#create"
   get "posts/new" =>"posts#new"

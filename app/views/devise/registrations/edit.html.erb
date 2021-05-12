@@ -1,0 +1,53 @@
+<div class="posts_container">
+  <div class="sprout">
+    <h2 class="posts_front"><i class="fas fa-carrot"></i>ユーザー設定</h2>
+  </div>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="form-container">
+    <div class="form-main">
+      <p class="p_b">新しいアカウントを作成</p>
+      <div class="form-inner">
+        <div class="field">
+          <%= f.label :メールアドレス %><br>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+
+        <div class="field">
+          <%= f.label :password %> <i>(変更する新しいパスワード)</i><br>
+          <%= f.password_field :password, autocomplete: "new-password" %>
+          <% if @minimum_password_length %>
+            <br />
+            <em><%= @minimum_password_length %> 文字以上</em>
+          <% end %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation %><br>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :current_password %><br>
+          <%= f.password_field :current_password, autocomplete: "current-password" %>
+        </div>
+
+        <div class="actions">
+        <%= f.submit "変更する" %>
+        </div>
+      </div>
+    </div>
+  </div>      
+<% end %>
+
+<h3>アカウントの削除はこちら</h3>
+
+<p><%= button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "本当に消していいですか？" }, method: :delete %></p>
+
+<%= link_to "Back", :back %>
+

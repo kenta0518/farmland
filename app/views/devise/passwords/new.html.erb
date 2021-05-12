@@ -1,0 +1,24 @@
+<div class="posts_container">
+  <div class="sprout">
+    <h2 class="posts_front"><i class="fas fa-carrot"></i>パスワードの再発行</h2>
+  </div>
+
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="form-container">
+      <div class="form-main">
+        <p class="p_b">パスワードの再発行</p>
+        <div class="form-inner">
+          <div class="field">
+            <%= f.label :メールアドレス %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "パスワード再発行する" %>
+            <p class="links_btn"><%= render "devise/shared/links" %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>

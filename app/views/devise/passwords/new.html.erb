@@ -13,7 +13,6 @@
             <%= f.label :メールアドレス %><br />
             <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
           </div>
-
           <div class="actions">
             <%= f.submit "パスワード再発行する" %>
             <p class="links_btn"><%= render "devise/shared/links" %></p>
@@ -22,3 +21,4 @@
       </div>
     </div>
   <% end %>
+</div>

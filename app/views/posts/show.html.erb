@@ -7,7 +7,7 @@
     </div>
   <div class="show_contents">
     <div class="show_image">
-        <%= image_tag @post.p_image.url,class:"show_farm_image" %>
+      <%= image_tag @post.p_image.url,class:"show_farm_image" %>
     </div>
     <%#= form_with(url: "reservations/#{@post.id}/new" , method: :get) do |f| %>
       <div class="show_reservations">
@@ -20,6 +20,10 @@
   </div>
   <table class="show_table">
     <tbody>
+      <tr>
+        <th>農園所有者名</th>
+        <td><%= @user.username %></td>
+      </tr>
       <tr>
         <th>農園名</th>
         <td><%= @post.p_name %></td>

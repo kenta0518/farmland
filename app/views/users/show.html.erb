@@ -1,0 +1,47 @@
+<h1>マイルーム</h1>
+<p>名前 : <%= @user.username %></p>
+<p>メールアドレス : <%= @user.email %></p>
+<%= link_to("パスワード変更", "/users/edit") %>
+<% @user.posts.each do |post| %>
+  <section class="myfarmer_area__box">
+      <div class="posts_photo">
+      <% if post.user_id == current_user.id %>
+      <%= link_to("編集", "/posts/#{post.id}/edit") %>
+      <%= link_to("削除", "/posts/#{post.id}", {method: "delete"}) %>
+      <% end %>
+        <%= link_to("/posts/#{post.id}",class:"no-underline") do %>
+          <div class="post-menus">
+            <%#= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"}) %>
+          </div>
+          <p><%= image_tag post.p_image.url,class: "img-room"%></p>
+          <p class="green-btn"><span>詳細</span></p>
+        <% end %>
+      </div>
+      <div class="posts_description">
+        <div class="posts_description_title">
+          <h4><%= post.p_name %></h4>
+        </div>
+        <dl class="posts_description_address">
+          <dt>場所</dt>
+          <dd><%= post.p_adress %></dd>
+        </dl>
+        <ul class="posts_description_list">
+          <li>
+            <dl class="posts_description_fee">
+              <dt>月額利用料</dt>
+              <dd><%= post.p_price %>円</dd>
+            </dl>
+          </li>
+          <li>
+            <dl class="posts_description_menseki">
+              <dt>区画面積</dt>
+              <dd><%= post.p_menseki %>㎡</dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+
+<% end %>

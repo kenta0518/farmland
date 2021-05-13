@@ -1,15 +1,15 @@
 <div class="posts_container">
   <div class="sprout">
-    <h2 class="posts_front"><i class="fas fa-carrot"></i>貸し農園登録フォーム</h2>
+    <h2 class="posts_front"><i class="fas fa-carrot"></i>登録フォーム編集</h2>
   </div>
-  <%= form_with model: @post, url: "/posts",method: :post, local: true do |f| %>
+  <%= form_with(url: post_path(@post.id),local:true,method: :patch) do |f| %>
     <div class="myfarmer_area__box_new">
       <div class="form_inner">
         <div class="contents-wrapper">
           <div class="contents-row">
             <label class="span-contents"><i class="fas fa-seedling"></i>   農園の名前</label>
             <div class="form_contents">
-              <%= f.text_field :p_name %>
+              <%= f.text_field :p_name,value: @post.p_name %>
             </div>
           </div>
         </div>
@@ -17,7 +17,7 @@
           <div class="contents-row">
             <label class="span-contents"><i class="fas fa-map-marker-alt"></i>  住所 </label>
             <div class="form_contents">
-              <%= f.text_area :p_adress %>
+              <%= f.text_area :p_adress,value: @post.p_adress %>
             </div>
           </div>
         </div>
@@ -25,7 +25,7 @@
           <div class="contents-row">
             <label class="span-contents"><i class="fas fa-ruler-combined"></i>  面積 /㎡</label>
             <div class="form_contents">
-              <%= f.number_field :p_menseki %>
+              <%= f.number_field :p_menseki,value: @post.p_menseki %>
             </div>
           </div>
         </div>
@@ -33,7 +33,7 @@
           <div class="contents-row">
             <label class="span-contents"><i class="fas fa-yen-sign"></i> 月額利用料 </label>
             <div class="form_contents">
-              <%= f.number_field :p_price %>
+              <%= f.number_field :p_price,value: @post.p_price %>
             </div>
           </div>
         </div>
@@ -41,21 +41,13 @@
           <div class="contents-row">
             <label class="span-contents"><i class="fas fa-oil-can"></i>  農園の紹介 </label>
             <div class="form_contents">
-              <%= f.text_area :p_introduction %>
-            </div>
-          </div>
-        </div>
-        <div class="contents-wrapper">
-          <div class="contents-row">
-            <label class="span-contents"><i class="fas fa-camera"></i>  画像 </label>
-            <div class="icon-contents">
-              <%= f.file_field :p_image %>
+              <%= f.text_area :p_introduction,value: @post.p_introduction %>
             </div>
           </div>
         </div>
         <div class="contents-wrapper">
           <p class="top-contents">
-            <%= f.submit "登録",class:"form_btn"  %>
+            <%= f.submit "変更",class:"form_btn"  %>
           </p>
         </div>
       </div>

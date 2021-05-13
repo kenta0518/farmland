@@ -1,15 +1,12 @@
 <header class="main_h">
-<a class="logo" href="/">農ライフ<i class="fas fa-leaf"></i></a>
+  <a class="logo" href="/">農ライフ<i class="fas fa-leaf"></i></a>
   <div class="row">
-    
-      
     <% if user_signed_in? %>
       <nav>
         <ul>
           <li><%= link_to("農園を貸す", "/posts/new") %></li>
           <li><%= link_to("予約済ルーム一覧", "/reservations/#{current_user.id}/index") %></li>
-          <li><%= link_to("登録済ルーム一覧", "/users/#{current_user.id}/rooms") %></li>
-          <li><%= link_to("アカウント設定", "/users/edit") %></li>
+          <li><%= link_to("マイルーム", "/users/#{current_user.id}") %></li>
           <li><%= link_to("ログアウト", "/users/sign_out", {method: "delete"}) %></li>
         </ul>
       </nav>

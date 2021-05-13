@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   mount_uploader :p_image, PImageUploader
-  validates :user_id, {presence: true}
+  validates :user_id, { presence: true }
   validates :p_name, presence: true
   validates :p_adress, presence: true
   validates :p_image, presence: true

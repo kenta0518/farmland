@@ -17,7 +17,6 @@ services:
       - "3000:3000"
     links:
       - db
-      -selenium_chrome
     environment:
       - "SELENIUM_DRIVER_URL=http://selenium_chrome:4444/wd/hub" # 追記
   selenium_chrome:

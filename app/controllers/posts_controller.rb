@@ -20,7 +20,8 @@ class PostsController < ApplicationController
       flash[:notice] = "あなたの農園を登録しました！"
       redirect_to("/posts")
     else
-      redirect_to("/")
+      flash[:notice] = "必要な情報を全て入力してください"
+      redirect_to("/posts/new")
     end
   end
 

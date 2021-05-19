@@ -1,0 +1,75 @@
+<div class="posts_container">
+  <div class="sprout">
+    <h2 class="posts_front"><i class="fas fa-carrot"></i>予約者情報</h2>
+  </div>
+  <% @posts.each do |post| %>
+    <% post.reservations.each do |reservation| %>
+      <section class="myfarmer_area__box">
+        <div class="posts_photo_re">
+          <p><%= image_tag post.p_image.url,class: "img-room_re"%></p>
+        </div>
+        <div class="posts_description_re">
+          <div class="posts_description_title">
+            <h4><%= post.p_name %></h4>
+          </div>
+          <dl class="posts_description_address">
+            <dt>場所</dt>
+            <dd><%= post.p_adress %></dd>
+          </dl>
+          <ul class="posts_description_list">
+            <li>
+              <dl class="posts_description_fee">
+                <dt>開始希望日</dt>
+                <dd><%= reservation.start_date %></dd>
+              </dl>
+            </li>
+            <li>
+              <dl class="posts_description_menseki">
+                <dt>終了予定日</dt>
+                <dd><%= reservation.end_date %></dd>
+              </dl>
+            </li>
+            <li>
+              <dl class="posts_description_menseki">
+                <dt>使用月数</dt>
+                <% if ((reservation.end_date) - (reservation.start_date)).to_int/30 == 0 %>
+                  <dd>1ヶ月</dd>
+                <% else %>
+                  <dd><%= ((reservation.end_date) - (reservation.start_date)).to_int/30 %>ヶ月</dd>
+                <% end %>
+              </dl>
+            </li>
+          </ul>
+          <ul class="posts_description_list">
+            <li>
+              <dl class="posts_description_fee">
+                <dt>月額利用料</dt>
+                <dd><%= post.p_price %>円</dd>
+              </dl>
+            </li>
+            <li>
+              <dl class="posts_description_menseki">
+                <dt>区画面積</dt>
+                <dd><%= post.p_menseki %>㎡</dd>
+              </dl>
+            </li>
+          </ul>
+          <ul class="posts_description_list">
+            <li>
+              <dl class="posts_description_fee">
+                <dt>予約者指名</dt>
+                <dd><%= reservation.user.username %></dd>
+              </dl>
+            </li>
+            <li>
+              <dl class="posts_description_menseki">
+                <dt>予約者連絡先</dt>
+                <dd><%= mail_to(reservation.user.email) %></dd>
+              </dl>
+            </li>
+          </ul>
+        </div>
+      </section>
+    <% end %>
+  <% end %>
+</div>

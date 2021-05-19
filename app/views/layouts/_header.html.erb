@@ -4,8 +4,8 @@
     <% if user_signed_in? %>
       <nav>
         <ul>
+          <li><%= link_to("農園を探す", "/posts") %></li>
           <li><%= link_to("農園を貸す", "/posts/new") %></li>
-          <li><%= link_to("予約済ルーム一覧", "/reservations/#{current_user.id}/index") %></li>
           <li><%= link_to("マイページ", "/users/#{current_user.id}") %></li>
           <li><%= link_to("ログアウト", "/users/sign_out", {method: "delete"}) %></li>
         </ul>

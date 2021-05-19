@@ -1,18 +1,56 @@
-<h1>マイルーム</h1>
-<p>名前 : <%= @user.username %></p>
-<p>メールアドレス : <%= @user.email %></p>
-<%= link_to("パスワード変更", "/users/edit") %>
+<div class="posts_container">
+  <div class="sprout">
+    <h2 class="posts_front"><i class="fas fa-carrot"></i>マイルーム</h2>
+  </div>
+  <ul class="posts_description_list">
+    <li>
+      <dl class="posts_description_fee">
+        <dt>ユーザーネーム</dt>
+        <dd><%= @user.username %></p></dd>
+      </dl>
+    </li>
+    <li>
+      <dl class="posts_description_menseki">
+        <dt>登録メールアドレス</dt>
+        <dd><%= @user.email %></dd>
+      </dl>
+    </li>
+    <li>
+      <dl class="posts_description_menseki">
+        <dt>パスワード</dt>
+        <dd>*****</dd>
+        <dd><%= link_to("パスワード変更はこちら", "/users/edit") %></dd>
+      </dl>
+    </li>
+  </ul>
+  <ul class="posts_description_list">
+    <li>
+      <dl class="posts_description_fee">
+        <dt>予約確認</dt>
+        <dd><%= link_to("予約した農園を確認する", "/reservations") %></dd>
+      </dl>
+    </li>
+    <li>
+      <dl class="posts_description_menseki">
+        <dt>貸す農園</dt>
+        <dd><%= link_to("予約の入っている農園を確認する", "/lend") %></dd>
+      </dl>
+    </li>
+  </ul>
+  <div class="ribbon_p">
+    <div class="ribbon9">
+      <h3>登録済農園</h3>
+    </div>
+  </div>
+
 <% @user.posts.each do |post| %>
   <section class="myfarmer_area__box">
-      <div class="posts_photo">
+    <div class="posts_photo">
       <% if post.user_id == current_user.id %>
-      <%= link_to("編集", "/posts/#{post.id}/edit") %>
-      <%= link_to("削除", "/posts/#{post.id}", {method: "delete"}) %>
+        <%= link_to("編集", "/posts/#{post.id}/edit") %>
+        <%= link_to("削除", "/posts/#{post.id}", {method: "delete"}) %>
       <% end %>
         <%= link_to("/posts/#{post.id}",class:"no-underline") do %>
-          <div class="post-menus">
-            <%#= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"}) %>
-          </div>
           <p><%= image_tag post.p_image.url,class: "img-room"%></p>
           <p class="green-btn"><span>詳細</span></p>
         <% end %>
@@ -41,7 +79,5 @@
         </ul>
       </div>
     </section>
-
-
-
 <% end %>
+</div>

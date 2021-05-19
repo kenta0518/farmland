@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
   def index
-    @posts = Post.all
+    @posts = Post.all.page(params[:page]).per(3)
   end
 
   def new; end
@@ -53,6 +53,10 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
     @post.destroy
     redirect_to("/")
+  end
+
+  def search
+    @posts = Post.search(params[:search])
   end
 
   private

@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  has_many :reservations
   mount_uploader :p_image, PImageUploader
   validates :user_id, { presence: true }
   validates :p_name, presence: true
@@ -9,5 +10,11 @@ class Post < ApplicationRecord
   validates :p_introduction, presence: true
   def user
     return User.find_by(id: self.user_id)
+  end
+
+  def self.search(search)
+    return Post.all unless search
+
+    Post.where(['p_adress LIKE ?', "%#{search}%"])
   end
 end

@@ -1,11 +1,8 @@
 <div class="posts_container">
   <div class="sprout">
     <h2 class="posts_front"><i class="fas fa-carrot"></i>農場一覧</h2>
+    <h3>検索結果</h3>
   </div>
-  <%= form_with(url: posts_search_path,method: :get,class: "search-container",local: true) do |f|%>
-    <%= f.text_field :search, placeholder:"キーワード" %>
-    <%= f.submit '検索' %>
-  <% end %>
   <% @posts.each do |post| %>
     <section class="myfarmer_area__box">
       <div class="posts_photo">
@@ -39,5 +36,4 @@
       </div>
     </section>
   <% end %>
-  <%= paginate @posts %>
 </div>

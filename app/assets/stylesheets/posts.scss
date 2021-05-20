@@ -38,6 +38,7 @@
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  align-items: center;
 }
 .posts_photo {
   width: 27%;
@@ -87,7 +88,7 @@
 .posts_description_address dd {
   width: 84%;
   margin-left: auto;
-  font-size: 2.7vh;
+  font-size: 2.0vw;
   color: black;
   font-weight: bold;
 }
@@ -108,7 +109,7 @@
   color: black;
 }
 .posts_description_fee dd {
-  font-size: 2.7vh;
+  font-size: 2.5vw;
   font-weight: bold;
   color: black;
 }
@@ -119,7 +120,7 @@
   color: black;
 }
 .posts_description_menseki dd{
-  font-size: 2.7vh;
+  font-size: 2.5vw;
   font-weight: bold;
   color: black;
 }
@@ -298,7 +299,7 @@ th {
   width:100%;
 }
 .search-container{
-  width: 490px;
+  width: 300px;
   display: block;
   margin: 0 auto;
   display: flex;
@@ -329,4 +330,10 @@ input#search{
     opacity: 0;
     }    
   }
+}
+input#reservation_start_date{
+  width: 100%;
+}
+input#reservation_end_date{
+  width: 100%;
 }

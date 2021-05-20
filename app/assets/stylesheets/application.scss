@@ -38,11 +38,6 @@ body{
   top: -100px;
   padding-bottom: 6px;
 }
-@media only screen and (max-width: 766px) {
-  .main_h {
-    padding-top: 25px;
-  }
-}
 .open-nav {
   max-height: 400px !important;
 }
@@ -69,19 +64,9 @@ body{
   top:15px;
   padding-bottom: 20px;
 }
-@media only screen and (max-width: 766px) {
-  .logo {
-    float: none;
-  }
-}
 nav {
   float: right;
   width: 80%;
-}
-@media only screen and (max-width: 766px) {
-  nav {
-    width: 100%;
-  }
 }
 nav ul {
   list-style: none;
@@ -89,26 +74,10 @@ nav ul {
   text-align: right;
   float: right;
 }
-@media only screen and (max-width: 766px) {
-  nav ul {
-    padding-top: 10px;
-    margin-bottom: 22px;
-    float: left;
-    text-align: center;
-    width: 100%;
-  }
-}
 nav ul li {
   display: inline-block;
-  margin-left: 35px;
+  margin-left: 30px;
   line-height: 1.5;
-}
-@media only screen and (max-width: 766px) {
-  nav ul li {
-    width: 100%;
-    padding: 7px 0;
-    margin: 0;
-  }
 }
 nav ul a {
   color: #888888;
@@ -126,11 +95,6 @@ nav ul a {
   -webkit-transition: all 200ms ease-in;
   -moz-transition: all 200ms ease-in;
   transition: all 200ms ease-in;
-}
-@media only screen and (max-width: 766px) {
-  .mobile-toggle {
-    display: block;
-  }
 }
 .mobile-toggle span {
   width: 30px;
@@ -160,7 +124,7 @@ footer {
   font-size: 1.4em;
 }
 .footer_logo{
-  font-size: 25px;
+  font-size: 2.0vw;
   color:rgb(011, 054, 097);
   text-transform: uppercase;
   display: block;

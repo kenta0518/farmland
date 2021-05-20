@@ -4,19 +4,19 @@
   </div>
   <ul class="posts_description_list">
     <li>
-      <dl class="posts_description_fee">
+      <dl class="posts_description_ushow">
         <dt>ユーザーネーム</dt>
         <dd><%= @user.username %></p></dd>
       </dl>
     </li>
     <li>
-      <dl class="posts_description_menseki">
+      <dl class="posts_description_ushow">
         <dt>登録メールアドレス</dt>
         <dd><%= @user.email %></dd>
       </dl>
     </li>
     <li>
-      <dl class="posts_description_menseki">
+      <dl class="posts_description_ushow">
         <dt>パスワード</dt>
         <dd>*****</dd>
         <dd><%= link_to("パスワード変更はこちら", "/users/edit") %></dd>
@@ -25,13 +25,13 @@
   </ul>
   <ul class="posts_description_list">
     <li>
-      <dl class="posts_description_fee">
+      <dl class="posts_description_ushow">
         <dt>予約確認</dt>
         <dd><%= link_to("予約した農園を確認する", "/reservations") %></dd>
       </dl>
     </li>
     <li>
-      <dl class="posts_description_menseki">
+      <dl class="posts_description_ushow">
         <dt>貸す農園</dt>
         <dd><%= link_to("予約の入っている農園を確認する", "/lend") %></dd>
       </dl>

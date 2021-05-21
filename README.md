@@ -1,25 +1,31 @@
-# README
+## アプリケーション名
+### 『農ライフ』
+## アプリケーション概要
+「農ライフ」は、空いている農地を持っている人とその土地で植物や農作物を育てたい人をマッチングするガーデンシェアです。
+## URL
+[https://farmland.herokuapp.com/](https://farmland.herokuapp.com/)
 <img width="1440" alt="スクリーンショット 2021-05-22 3 32 45" src="https://user-images.githubusercontent.com/65330638/119183131-a0378100-baae-11eb-9527-551f241f260a.png">
+## 使用技術
+- Ruby 2.5.3
+- Ruby on Rails 5.2.2
+- MySQL 5.7
+- 本場環境ではPostgres
+- AWS S3
+- Docker/Docker-compose
+- Circle CI/CD(RSpec + Rubocop + heroku自動デプロイ)
+## 構成図
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### CircleCi CI/CD
+- Githubへのpush時に、RspecとRubocopが自動で実行されます。
+- masterブランチへのpushでは、RspecとRubocopが成功した場合、herokuへの自動デプロイが実行されます。
+## 機能一覧
+- ユーザー登録、ログイン機能(devise)
+- 投稿機能 
+  - 画像投稿（carrierwave）（rmagick）
+- ページネーション機能(kaminari)
+- 検索機能
+## テスト
+- Rspec
+  - 単体テスト（model）
+  - 機能テスト（request）
+  - 統合テスト（system）

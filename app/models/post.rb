@@ -4,7 +4,6 @@ class Post < ApplicationRecord
   validates :user_id, { presence: true }
   validates :p_name, presence: true
   validates :p_adress, presence: true
-  validates :p_image, presence: true
   validates :p_menseki, presence: true
   validates :p_price, presence: true
   validates :p_introduction, presence: true

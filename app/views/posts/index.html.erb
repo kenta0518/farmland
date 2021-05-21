@@ -10,7 +10,11 @@
     <section class="myfarmer_area__box">
       <div class="posts_photo">
         <%= link_to("/posts/#{post.id}",class:"no-underline") do %>
-          <p><%= image_tag post.p_image.url,class: "img-room"%></p>
+          <% if post.p_image.file.nil? %>
+            <p><%= image_tag "no_image.jpeg",class: "img-room"%></p>
+          <% else %>
+            <p><%= image_tag post.p_image.url,class: "img-room"%></p>
+          <% end %>
           <p class="green-btn"><span>詳細</span></p>
         <% end %>
       </div>

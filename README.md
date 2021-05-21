@@ -14,17 +14,21 @@
 - Docker/Docker-compose
 - Circle CI/CD(RSpec + Rubocop + heroku自動デプロイ)
 ## 構成図
+<img width="776" alt="PF 環境図" src="https://user-images.githubusercontent.com/65330638/119188209-530add80-bab5-11eb-8db3-d07292a8f15f.png">
 
 #### CircleCi CI/CD
+
 - Githubへのpush時に、RspecとRubocopが自動で実行されます。
 - masterブランチへのpushでは、RspecとRubocopが成功した場合、herokuへの自動デプロイが実行されます。
 ## 機能一覧
+
 - ユーザー登録、ログイン機能(devise)
 - 投稿機能 
   - 画像投稿（carrierwave）（rmagick）
 - ページネーション機能(kaminari)
 - 検索機能
 ## テスト
+
 - Rspec
   - 単体テスト（model）
   - 機能テスト（request）

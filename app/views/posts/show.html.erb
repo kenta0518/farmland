@@ -7,7 +7,11 @@
     </div>
   <div class="show_contents">
     <div class="show_image">
-      <%= image_tag @post.p_image.url,class:"show_farm_image" %>
+      <% if @post.p_image.file.nil? %>
+        <p><%= image_tag "no_image.jpeg",class: "show_farm_image"%></p>
+      <% else %>
+        <p><%= image_tag @post.p_image.url,class: "show_farm_image" %></p>
+      <% end %>
     </div>
     <div class="show_reservations">
       <%= form_for [@post, @post.reservations.new] do |f| %>

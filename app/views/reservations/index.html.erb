@@ -7,7 +7,11 @@
     <% @posts.each do |post| %>
     <section class="myfarmer_area__box">
       <div class="posts_photo_re">
-        <p><%= image_tag post.p_image.url,class: "img-room_re"%></p>
+        <% if post.p_image.file.nil? %>
+          <p><%= image_tag "no_image.jpeg",class: "img-room_re" %></p>
+        <% else %>
+          <p><%= image_tag post.p_image.url,class: "img-room_re" %></p>
+        <% end %>
       </div>
       <div class="posts_description_re">
         <div class="posts_description_title">

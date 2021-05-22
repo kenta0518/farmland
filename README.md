@@ -2,6 +2,9 @@
 ### 『農ライフ』
 ## アプリケーション概要
 「農ライフ」は、空いている農地を持っている人とその土地で植物や農作物を育てたい人をマッチングするガーデンシェアです。
+#### テスト用アカウント
+##### メールアドレス： test@gmail.com
+##### パスワード　： password
 ## URL
 [https://farmland.herokuapp.com/](https://farmland.herokuapp.com/)
 <img width="1440" alt="スクリーンショット 2021-05-22 3 32 45" src="https://user-images.githubusercontent.com/65330638/119183131-a0378100-baae-11eb-9527-551f241f260a.png">

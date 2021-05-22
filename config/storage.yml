@@ -12,7 +12,7 @@ amazon:
   access_key_id: AKIARH5UR2E4C43RZ373
   secret_access_key: 92zReFKPwxKKa4/vwShw+ZZNgfPLZndbN6TOcoHw
   region: ap-northeast-1
-  bucket: your_own_bucket
+  bucket: farmland55
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:

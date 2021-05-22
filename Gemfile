@@ -33,6 +33,7 @@ gem 'pry-rails'
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'rmagick'
+gem "aws-sdk-s3", require: false
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'devise'

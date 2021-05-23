@@ -3,7 +3,7 @@ require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 
 CarrierWave.configure do |config|
-  if Rails.env.production? # 開発中もs3使う
+  if Rails.env.production? || Rails.env.development?
     config.storage :fog
     config.fog_provider = 'fog/aws'
     config.fog_directory  = 'farmland55'
@@ -13,7 +13,7 @@ CarrierWave.configure do |config|
       provider: 'AWS',
       aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
       aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
-      region: 'ap-northeast-1',
+      region: 'ap-northeast-1'
     }
   else
     config.storage :file

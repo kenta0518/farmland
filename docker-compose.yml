@@ -15,11 +15,12 @@ services:
       - .:/rails_farmland
     ports:
       - "3000:3000"
+    env_file: .env
     links:
       - db
     environment:
-      - "SELENIUM_DRIVER_URL=http://selenium_chrome:4444/wd/hub" # 追記
+      - "SELENIUM_DRIVER_URL=http://selenium_chrome:4444/wd/hub"
   selenium_chrome:
-    image: selenium/standalone-chrome-debug # 追記
+    image: selenium/standalone-chrome-debug
     logging:
       driver: none

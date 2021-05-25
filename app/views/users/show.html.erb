@@ -1,6 +1,11 @@
 <div class="posts_container">
   <div class="sprout">
-    <h2 class="posts_front"><i class="fas fa-carrot"></i>マイルーム</h2>
+    <h2 class="posts_front"><i class="fas fa-carrot"></i><%= @user.username %>の部屋</h2>
+  </div>
+  <section class="stats">
+    <%= render 'users/stats' %>
+    <%= render 'relationships/follow_button', user: @user %>
+  </section>
   </div>
   <ul class="posts_description_list">
     <li>
@@ -19,10 +24,13 @@
       <dl class="posts_description_ushow">
         <dt>パスワード</dt>
         <dd>*****</dd>
-        <dd><%= link_to("パスワード変更はこちら", "/users/edit") %></dd>
+        <% if current_user.id == @user.id %>
+          <dd><%= link_to("パスワード変更はこちら", "/users/edit") %></dd>
+        <% end %>
       </dl>
     </li>
   </ul>
+  <% if current_user.id == @user.id %>
   <ul class="posts_description_list">
     <li>
       <dl class="posts_description_ushow">
@@ -37,6 +45,7 @@
       </dl>
     </li>
   </ul>
+  <% end %>
   <div class="ribbon_p">
     <div class="ribbon9">
       <h3>登録済農園</h3>

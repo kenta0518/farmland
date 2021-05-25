@@ -1,0 +1,13 @@
+<div class="posts_container">
+  <div class="sprout">
+    <h2 class="posts_front"><i class="fas fa-carrot"></i>フォロワー</h2>
+  </div>
+  <% @user.followers.each do |user| %>
+    <table>
+      <tr>
+        <td><%= user.username %></td>
+        <td><%= link_to '詳細', user_path(user) %></td>
+      </tr>
+    </table>
+  <% end %>
+</div>

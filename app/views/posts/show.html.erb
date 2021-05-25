@@ -50,7 +50,7 @@
     <tbody>
       <tr>
         <th>農園所有者名</th>
-        <td><%= @user.username %></td>
+        <td><%= link_to @user.username, user_path(@user) %></td>
       </tr>
       <tr>
         <th>農園名</th>

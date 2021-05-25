@@ -3,11 +3,15 @@
     <h2 class="posts_front"><i class="fas fa-carrot"></i>フォロー中</h2>
   </div>
   <% @user.followings.each do |user| %>
-    <table>
-      <tr>
-        <td><%= user.username %></td>
-        <td><%= link_to '詳細', user_path(user) %></td>
-      </tr>
-    </table>
+    <%= link_to user_path(user) do %>
+      <div class="f_wrapper">
+        <div class="f_name">
+          <%= user.username %>
+        </div>
+        <div class="f_pro">
+          <%= user.profile %>
+        </div>
+      </div>
+    <% end %>
   <% end %>
 </div>

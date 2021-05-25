@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :followers, through: :reverse_of_relationships, source: :user
   devise  :database_authenticatable, :registerable,
           :recoverable, :rememberable, :validatable
+  validates :profile, length: { maximum: 200 }
   def posts
     return Post.where(user_id: self.id)
   end

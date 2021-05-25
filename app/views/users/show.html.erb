@@ -31,20 +31,29 @@
     </li>
   </ul>
   <% if current_user.id == @user.id %>
-  <ul class="posts_description_list">
-    <li>
-      <dl class="posts_description_ushow">
-        <dt>予約確認</dt>
-        <dd><%= link_to("予約した農園を確認する", "/reservations") %></dd>
-      </dl>
-    </li>
-    <li>
-      <dl class="posts_description_ushow">
-        <dt>貸す農園</dt>
-        <dd><%= link_to("予約の入っている農園を確認する", "/lend") %></dd>
-      </dl>
-    </li>
-  </ul>
+    <ul class="posts_description_list">
+      <li>
+        <dl class="posts_description_ushow">
+          <dt>予約確認</dt>
+          <dd><%= link_to("予約した農園を確認する", "/reservations") %></dd>
+        </dl>
+      </li>
+      <li>
+        <dl class="posts_description_ushow">
+          <dt>貸す農園</dt>
+          <dd><%= link_to("予約の入っている農園を確認する", "/lend") %></dd>
+        </dl>
+      </li>
+    </ul>
+  <% else %>
+    <ul class="">
+      <li>
+        <dl class="posts_description_ushow">
+          <dt>自己紹介</dt>
+          <dd><%= @user.profile%></dd>
+        </dl>
+      </li>
+    </ul>
   <% end %>
   <div class="ribbon_p">
     <div class="ribbon9">

@@ -3,7 +3,7 @@
 <% else %>
   <% if @isroom == true %>
     <div class="fancy-button bg-gradient2">
-      <span><a class="fancy-button_span2" href="/rooms/<%= @roomid %>"><i class="fa fa-envelope"></i>メッセージ</a></span>
+      <span><a class="fancy-button_span2" name="f_commit" href="/rooms/<%= @roomid %>"><i class="fa fa-envelope"></i>メッセージ</a></span>
     </div>
   <% else %>
     <%= form_for @room do |f| %>
@@ -11,7 +11,7 @@
         <%= e.hidden_field :user_id, :value=> @user.id %>
       <% end %>
       <div class="fancy-button bg-gradient2">
-        <span><%= f.submit "チャットを始める", class: 'fancy-button_span2' %></span>
+        <span><%= f.submit "チャットを始める", name: "f_commit", class: 'fancy-button_span2' %></span>
       </div>
     <% end %>
   <% end %>

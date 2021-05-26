@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
+  resources :messages, only: [:create]
+  resources :rooms, only: [:create,:show]
   resources :posts do
     resources :reservations
   end

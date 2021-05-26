@@ -5,9 +5,11 @@
 .fancy-button_span,
 .bg-gradient1:before {
   background: #52A0FD;
+  background: linear-gradient(to right, #52A0FD 0%, #00e2fa 80%, #00e2fa 100%);
 }
 
 .bg-gradient2 span,
+.fancy-button_span2,
 .bg-gradient2:before {
   background: #44ea76;
   background: linear-gradient(to right, #44ea76 0%, #39fad7 80%, #39fad7 100%);
@@ -31,14 +33,21 @@ a:hover, a:focus, a:active {
 .fancy-button_span{
   color: white;
   border: none;
-  padding: 15px 40px;
+  padding: 1vw 3vw;
+  border-radius: 50em;
+  font-size: 1vw;
+}
+.fancy-button_span2{
+  color: white;
+  border: none;
+  padding: 1.1vw 3vw;
+  font-size: 1.2vw;
   border-radius: 50em;
 }
 .fancy-button {
   display: inline-block;
-  margin: 30px;
+  margin: 1vw;
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
-  font-size: 17px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #ffffff;

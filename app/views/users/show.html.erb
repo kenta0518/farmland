@@ -2,10 +2,14 @@
   <div class="sprout">
     <h2 class="posts_front"><i class="fas fa-carrot"></i><%= @user.username %>の部屋</h2>
   </div>
-  <section class="stats">
-    <%= render 'users/stats' %>
-    <%= render 'relationships/follow_button', user: @user %>
-  </section>
+  <div class="stats_flex">
+    <div class="stats">
+      <%= render 'users/stats' %>
+    </div>
+    <div class="stats_btn">
+      <%= render 'relationships/follow_button', user: @user %>
+      <%= render 'users/chat', user: @user %>
+    </div>
   </div>
   <ul class="posts_description_list">
     <li>
@@ -61,21 +65,21 @@
     </div>
   </div>
 
-<% @user.posts.each do |post| %>
-  <section class="myfarmer_area__box">
-    <div class="posts_photo">
-      <% if post.user_id == current_user.id %>
-        <%= link_to("編集", "/posts/#{post.id}/edit") %>
-        <%= link_to("削除", "/posts/#{post.id}", {method: "delete"}) %>
-      <% end %>
-        <%= link_to("/posts/#{post.id}",class:"no-underline") do %>
-          <% if post.p_image.file.nil? %>
-            <p><%= image_tag "no_image.jpeg",class: "img-room"%></p>
-          <% else %>
-            <p><%= image_tag post.p_image.url,class: "img-room"%></p>
-          <% end %>
-          <p class="green-btn"><span>詳細</span></p>
+  <% @user.posts.each do |post| %>
+    <section class="myfarmer_area__box">
+      <div class="posts_photo">
+        <% if post.user_id == current_user.id %>
+          <%= link_to("編集", "/posts/#{post.id}/edit") %>
+          <%= link_to("削除", "/posts/#{post.id}", {method: "delete"}) %>
         <% end %>
+          <%= link_to("/posts/#{post.id}",class:"no-underline") do %>
+            <% if post.p_image.file.nil? %>
+              <p><%= image_tag "no_image.jpeg",class: "img-room"%></p>
+            <% else %>
+              <p><%= image_tag post.p_image.url,class: "img-room"%></p>
+            <% end %>
+            <p class="green-btn"><span>詳細</span></p>
+          <% end %>
       </div>
       <div class="posts_description">
         <div class="posts_description_title">
@@ -101,5 +105,5 @@
         </ul>
       </div>
     </section>
-<% end %>
+  <% end %>
 </div>

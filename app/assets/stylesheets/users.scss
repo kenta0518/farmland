@@ -90,3 +90,15 @@
   color: black;
   font-size: 1.2vw;
 }
+.stats_btn{
+  float:right;
+  display: flex;
+  align-items: center;
+}
+.stats_flex{
+  display: flex;
+  justify-content: space-between;
+}
+.follow_c{
+  font-size: 1.1vw;
+}

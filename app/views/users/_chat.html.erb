@@ -1,9 +1,9 @@
 <% if @user.id == current_user.id %>
 
 <% else %>
-  <% if @isRoom == true %>
+  <% if @isroom == true %>
     <div class="fancy-button bg-gradient2">
-      <span><a class="fancy-button_span2" href="/rooms/<%= @roomId %>"><i class="fa fa-envelope"></i>メッセージ</a></span>
+      <span><a class="fancy-button_span2" href="/rooms/<%= @roomid %>"><i class="fa fa-envelope"></i>メッセージ</a></span>
     </div>
   <% else %>
     <%= form_for @room do |f| %>

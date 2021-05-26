@@ -13,6 +13,7 @@ class Post < ApplicationRecord
 
   def self.search(search)
     return Post.all unless search
+
     Post.where(['p_name LIKE ? OR p_adress LIKE ?', "%#{search}%", "%#{search}%"])
   end
 end

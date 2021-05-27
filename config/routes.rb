@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'notifications/index'
   devise_for :users
   root 'home#top'
   get "posts/search"=>"posts#search"
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
     resources :reservations
   end
   resources :relationships, only: [:create, :destroy]
+  resources :notifications, only: [:index, :update]
   get '/reservations' => 'reservations#index' 
   get '/lend' => 'reservations#lend'
   

@@ -28,7 +28,7 @@ RSpec.describe User, type: :system do
             fill_in 'user_password_confirmation', with: 'password'
             click_button 'アカウントを作成'
             expect(current_path).to eq user_registration_path
-            expect(page).to have_content "Eメール translation missing: ja.activerecord.errors.models.user.attributes.email.blank"
+            expect(page).to have_content "Eメールを入力してください"
           end
         end
         context '登録済メールアドレス' do
@@ -40,7 +40,7 @@ RSpec.describe User, type: :system do
             fill_in 'user_password_confirmation', with: 'password'
             click_button 'アカウントを作成'
             expect(current_path).to eq user_registration_path
-            expect(page).to have_content "Eメール translation missing: ja.activerecord.errors.models.user.attributes.email.taken"
+            expect(page).to have_content "Eメールはすでに存在します"
           end
         end
       end
@@ -69,7 +69,7 @@ RSpec.describe User, type: :system do
             fill_in 'user_current_password', with: 'password'
             click_button '変更する'
             expect(current_path).to eq user_registration_path
-            expect(page).to have_content 'Eメール translation missing: ja.activerecord.errors.models.user.attributes.email.blank'
+            expect(page).to have_content 'エラーが発生したため ユーザー は保存されませんでした'
           end
         end
       end

@@ -10,6 +10,19 @@
       <%= render 'relationships/follow_button', user: @user %>
       <%= render 'users/chat', user: @user %>
     </div>
+    <% if current_user.id == @user.id %>
+      <%= link_to notifications_index_path do %>
+        <% if unchecked_notifications.any? %>
+          <div class="fancy-button bg-gradient3">
+            <span class="fancy-button_span"><i class="fas fa-bell faa-ring animated-hover"></i>未既読の通知があります。</span>
+          </div>
+        <% else %>
+          <div class="fancy-button bg-gradient1">
+            <span class="fancy-button_span"><i class="fas fa-gem"></i>通知一覧</span>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
   </div>
   <ul class="posts_description_list">
     <li>
@@ -26,10 +39,10 @@
     </li>
     <li>
       <dl class="posts_description_ushow">
-        <dt>パスワード</dt>
+        <dt>ユーザー情報</dt>
         <dd>*****</dd>
         <% if current_user.id == @user.id %>
-          <dd><%= link_to("パスワード変更はこちら", "/users/edit") %></dd>
+          <dd><%= link_to("ユーザー情報変更はこちら", "/users/edit") %></dd>
         <% end %>
       </dl>
     </li>

@@ -59,6 +59,20 @@
             </dl>
           </li>
         </ul>
+        <ul class="posts_description_list">
+            <li>
+              <dl class="posts_description_fee">
+                <dt>所有者氏名</dt>
+                <dd><%= link_to post.user.username, user_path(post.user) %></dd>
+              </dl>
+            </li>
+            <li>
+              <dl class="posts_description_menseki">
+                <dt>所有者連絡先</dt>
+                <dd><%= mail_to(post.user.email) %></dd>
+              </dl>
+            </li>
+          </ul>
         <%= link_to("キャンセルする", "/posts/#{post.id}/reservations/#{reservation.id}", {method: "delete"}) %>
       </div>
     </section>

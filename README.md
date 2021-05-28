@@ -30,6 +30,9 @@
   - 画像投稿（carrierwave）（rmagick）
 - ページネーション機能(kaminari)
 - 検索機能
+- フォロー機能
+- DM機能
+- 通知機能（フォロー、DMが来た時）
 ## テスト
 
 - Rspec

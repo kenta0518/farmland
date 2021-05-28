@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'notifications/index'
   devise_for :users
   root 'home#top'
+  post '/home/guest_sign_in', to: 'home#new_guest'
   get "posts/search"=>"posts#search"
   resources :users, only: [:show] do
     member do

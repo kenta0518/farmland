@@ -61,8 +61,8 @@
           <ul class="posts_description_list">
             <li>
               <dl class="posts_description_fee">
-                <dt>予約者指名</dt>
-                <dd><%= reservation.user.username %></dd>
+                <dt>予約者氏名</dt>
+                <dd><%= link_to reservation.user.username, user_path(reservation.user) %></dd>
               </dl>
             </li>
             <li>
